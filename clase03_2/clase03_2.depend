@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1553519885 source:d:\galeano\clase03_2\main.c
+	<stdio.h>
+	<stdlib.h>
+

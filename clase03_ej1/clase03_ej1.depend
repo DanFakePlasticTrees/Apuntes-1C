@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1553525968 source:d:\galeano\clase03_ej1\main.c
+	<stdio.h>
+	<stdlib.h>
+
