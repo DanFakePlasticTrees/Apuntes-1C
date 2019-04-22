@@ -2,7 +2,7 @@
 #include "Empleado.h"
 
 
-void cargarEmpleado(eEmpleado lista[], int tam)
+/*void cargarEmpleado(eEmpleado lista[], int tam)
 {
     int i;
 
@@ -32,7 +32,7 @@ void cargarEmpleado(eEmpleado lista[], int tam)
 
 
 
-}
+}*/
 
 void mostrarListaEmpleados(eEmpleado lista[], int tam)
 {
@@ -51,7 +51,7 @@ void mostrarEmpleado(eEmpleado unEmpleado)
     printf("%d-%s-%c-%f-%f\n", unEmpleado.legajo,unEmpleado.nombre, unEmpleado.sexo, unEmpleado.sueldoBruto,unEmpleado.sueldoNeto);
 
 }
-int buscarLibre(eEmpleado lista[], int tam)
+/*int buscarLibre(eEmpleado lista[], int tam)
 {
     int i;
     int index=-1;
@@ -64,7 +64,7 @@ int buscarLibre(eEmpleado lista[], int tam)
         }
     }
     return index;
-}
+}*/
 void inicializarEmpleados(eEmpleado lista[], int tam)
 {
     int i;
@@ -78,9 +78,9 @@ void hardcodearDatosEmpleados(eEmpleado lista[], int tam)
 {
     int i;
     int legajos[]={1,8,9,7,2,4};
-    char nombres[][50]={"Maria","Pedro","Jose","Pedro","Pablo","Mateo"};
-    char sexo[]={'F','M','M','M','M','M'};
-    float sueldosBruto[]={1000,2000,3000,4000,5000,6000};
+    char nombres[][50]={"Carlos","Maria","Carlos","Pedro","Carlos","Mateo"};
+    char sexo[]={'M','F','M','M','M','M'};
+    float sueldosBruto[]={22000,22000,15000,4000,21000,6000};
 
     for(i=0; i<tam; i++)
     {
@@ -92,12 +92,65 @@ void hardcodearDatosEmpleados(eEmpleado lista[], int tam)
         lista[i].estado = OCUPADO;
 
     }
+}
+
+float buscarSueldoMaximo (eEmpleado lista[], int tam){
+float maximo;
+int flag=0;
+int i;
+
+for (i=0; i<tam; i++){
+
+    if (lista[i].estado==OCUPADO){
+
+        if(flag==0||lista[i].sueldoBruto>maximo){
+
+            maximo= lista[i].sueldoBruto;
+            flag=1;
+            printf("Maximo: %f\n", maximo);
+
+        }
+
+    }
+
+}
+}
 
 
+
+void mostrarEmpleadoSueldoMaximo(eEmpleado lista[], int tam ){
+int i;
+float maximo;
+for (i=0; i<tam; i++){
+
+ if(lista[i].estado==OCUPADO&& maximo==lista[i].sueldoBruto){
+    mostrarEmpleado(lista[i]);
+
+ }
+}
+}
+
+int contarCarlos(eEmpleado lista[], int tam)
+{
+int contadorCarlos=0;
+int i;
+for (i=0; i<tam; i++){
+
+    if(lista[i].estado==OCUPADO){
+
+        if(stricmp(lista[i].nombre, "carlos")==0 &&lista[i].sueldoBruto<20000){
+            contadorCarlos++;
+
+        }
+
+    }
 
 
 }
 
 
 
+    return contadorCarlos;
+
+}
 

@@ -20,3 +20,6 @@ void mostrarListaEmpleados(eEmpleado[], int);
 int buscarLibre(eEmpleado[], int);
 void inicializarEmpleados(eEmpleado[], int);
 void hardcodearDatosEmpleados(eEmpleado[], int);
+float buscarSueldoMaximo(eEmpleado[], int);
+void mostrarEmpleadoSueldoMaximo (eEmpleado[], int);
+int contarCarlos(eEmpleado[], int);
